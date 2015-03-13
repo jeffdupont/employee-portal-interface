@@ -13,7 +13,7 @@ module.exports = function(lineman) {
         dest: "<%= files.js.concatenatedVendor %>"
       }
     },
-
+    
     uglify: {
       jsVendor: {
         files: {
@@ -21,19 +21,32 @@ module.exports = function(lineman) {
         }
       }
     },
+    
+    copy : {
+      main :{
+        files:[{
+        expand: true,
+        cwd: "vendor/theme/assets/",
+        src : "**/*",
+        dest : "generated/assets/"
+        }]
+      }
+    },
 
     jade: {
       pagesDev: {
         options: {
           data: {
-            jsVendor: "js/vendor.js"
+            jsVendor: "js/vendor.js",
+            //jsPlugin: "js/plugin.js"
           }
         }
       },
       pagesDist: {
         options: {
           data: {
-            jsVendor: "js/vendor.js"
+            jsVendor: "js/vendor.js",
+            //jsPlugin: "js/plugin.js"
           }
         }
       }
@@ -42,7 +55,7 @@ module.exports = function(lineman) {
     watch: {
       less: {
         files: [
-          "<%= files.less.vendor %>",
+          "<%= files.less.vendor %>",          
           "<%= files.less.app %>",
           "<%= files.less.watch %>"
         ]
@@ -55,7 +68,7 @@ module.exports = function(lineman) {
         "vendor/components/font-awesome/fonts/": "vendor/components/font-awesome/fonts/**/*.*"
       }
     },
-
+/*
     server: {
       pushState: true,
       apiProxy: {
@@ -65,6 +78,15 @@ module.exports = function(lineman) {
         prefix: 'api'
       }
     }
-
+*/
+    server: {
+      pushState: true,
+      apiProxy: {
+        enabled: true,
+        host: 'localhost',
+        port: 3030,
+        prefix: 'api'
+      }
+    }
   };
 };

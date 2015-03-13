@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+Front End For Employee Management System using LinemanJS
+
+1) Updated at 18 September, 2014
+=======
 # A Lineman JS Template using Angular
 
 [![Build Status](https://travis-ci.org/linemanjs/lineman-angular-template.png?branch=master)](https://travis-ci.org/linemanjs/lineman-angular-template)
@@ -82,3 +87,4 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 ```
 
 Hopefully this helps you get up and running with AngularJS!
+>>>>>>> f2161fd1d6be1b1e7ea3d9bfbb32ddb9319318c1
